@@ -1,0 +1,62 @@
+\documentclass{ctexart}
+
+% 引入geometry宏包，定义文字的版面和缩放
+\usepackage{geometry}                      
+\geometry{a4paper, scale = 0.80}
+
+% 引入超链接宏包，实现点击目录跳转
+\usepackage{hyperref}
+
+% 引入常用的数学宏包
+\usepackage{amsmath, amssymb, amsthm, mathtools}
+
+% 引入tikz宏包，方便后续绘图
+\usepackage{tikz}
+
+% 引入国际单位制宏包，能更方便地表达物理单位
+\usepackage{siunitx}                        
+
+% 颜色宏包，方便自定义填充色
+\usepackage{xcolor}
+\definecolor{lightblue}{RGB}{226, 247, 254}
+\definecolor{SierraBlue}{RGB}{192 ,207, 222}
+
+% 引入注释宏包是方便后续隐藏解答，只编译题目
+\usepackage{comment}
+
+% 定义 [题目] 的样式为tcolorbox，只需调整参数
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable, most, skins, theorems}
+\newtcolorbox{question}[2][breakable] {
+    colback = lightblue,        %定义 边框内的填充色为lightblue，默认是灰色
+    colframe = cyan,            %定义 边框自身的颜色是较深的cyan蓝
+    fonttitle = \bfseries,      %定义 边框上的题目编号加粗
+    title = #2, #1              %定义 边框内的题目编号依次从 参数#2 #1 处传入
+}
+
+% 手动用新环境定义一套 [解答] 样式
+\newenvironment{solution} {
+    \noindent{\textbf{{\color{cyan}解答}}}\quad
+}
+
+
+%\excludecomment{solution} %编译这条指令就会隐藏所有解答，生成习题册
+
+\begin{document}
+
+\title{《热学》部分课后习题解答}
+
+\author{郭文锑}
+
+\date{\today}
+
+\maketitle
+
+\tableofcontents
+
+\input{章节/导论.tex}
+\input{章节/分子动理论的平衡态理论.tex}
+\input{章节/热力学第一定律.tex}
+\input{章节/热力学第二定律与熵.tex}
+
+\end{document}

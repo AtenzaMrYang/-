@@ -1,0 +1,278 @@
+\section{热力学第二定律与熵}
+\begin{question}{题目5.3.1}
+    如图所示，$1 \,\si{mol}$ 氢气(理想气体)在 $1$ 点的状态参量为 $V_1 =0.02 \,\si{m^3}$，$T_1 =300 \,\si{K}$; 在 $3$ 点的状态参量为 $V_3 = 0.04 \,\si{m^3}$，$T_3 = 300 \,\si{K}$.图中 $1 \to 3$ 为等温线，$1 \to 4$ 为绝热线，$1 \to 2$ 和 $4 \to 3$ 均为等压线，$2 \to 3$等体线. 试分别用如下三条路径计算 $S_3-S_1$ :
+
+    \begin{enumerate}
+        \item[(1)] 路径 $1 \to 2 \to 3$
+        \item[(2)] 路径 $1 \to 3$
+        \item[(3)] 路径 $1 \to 4 \to 3$
+    \end{enumerate}
+
+    \begin{center}
+        \begin{tikzpicture}[domain = 1:4]
+            %画坐标轴
+            \draw[latex-latex] (0,5) -- (0,0) -- (5,0);
+            \node[left] at (0,5) {$p$};
+            \node[below] at (5,0) {$V$};
+            \node[below] at (0,0) {$O$};
+
+            %画出1-2-3-4回路
+            \draw[cyan] (1,4) parabola bend (2,1) (4,1) -- (4,4) -- (1,4) -- cycle;
+            \draw[cyan] plot(\x, {4/\x} );
+
+            %标注点
+            \node [left ] at (1,4) {$1$};
+            \node [right] at (4,4) {$2$};
+            \node [below right] at (4,1) {$3$};
+            \node [below left ] at (2,1) {$4$};
+
+            %标注出箭头
+            \draw[cyan, -latex] (2.5,4) -- (2.6,4);
+            \draw[cyan, -latex] (4,2.5) -- (4,2.4);
+            \draw[cyan, -latex] (2.5,1) -- (2.6,1);
+        \end{tikzpicture}
+    \end{center}
+\end{question}
+
+\begin{solution}
+    (1) 路径 $1 \to 2$ 是等压过程，所以有 $T_2 = \dfrac{V_2}{V_1}T_1 = 600 \,\si{K}$ ，而路径 $2 \to 3$ 是等体过程，所以整个过程的熵变可以表示为
+    $$
+        S_3 - S_1
+        = \int_{(1)}^{(2)} \frac{\mathrm{d}Q}{T} + \int_{(2)}^{(3)} \frac{\mathrm{d}Q}{T}
+        = C_{p,\mathrm{m}}\int_{300}^{600}\frac{\mathrm{d}T}{T} + C_{V,\mathrm{m}}\int_{600}^{300}\frac{\mathrm{d}T}{T}
+        = R\ln2
+    $$
+    (2) 路径 $1 \to 3$ 是等温过程，其熵变为
+    $$
+        S_3 - S_1 = \int_{(1)}^{(3)} \frac{\mathrm{d}Q}{T} = R\ln\frac{V_3}{V_2} = R\ln2
+    $$
+    (3) 路径 $1 \to 4$是绝热过程，满足
+    $$
+        T_1V_1^{\gamma-1} = T_4V_4^{\gamma-1}
+    $$
+    而路径 $4 \to 3$ 的等压过程满足
+    $$
+        \frac{T_4}{T_3} = \frac{V_4}{V_3}
+    $$
+    联立以上两式，将未知的 $V_4$ 用已知的 $V_3$ 代换
+    $$
+        T_4 = T_1 \left(\frac{V_1}{V_4}\right)^{\gamma-1}
+        = T_1 \left(\frac{V_1T_3}{V_3T_4}\right)^{\gamma-1}
+    $$
+    分离 $T_4$ 后得到
+    $$
+        T_4^{\gamma} = T_1\left(\frac{V_1}{V_3}\right)^{\gamma-1}T_3^{\gamma-1}
+    $$
+    其中 $T_1 = T_3 = 300 \,\si{K}$，$\gamma = \dfrac{C_p}{C_V} = \dfrac{7}{5} $
+    $$
+        T_4
+        = \sqrt[\gamma]{T_1\left(\frac{V_1}{V_3}\right)^{\gamma-1}T_3^{\gamma-1}}
+        = \left(\frac{1}{2}\right)^{\frac{2}{7}} \times 300 \,\si{K}
+    $$
+    综上，路径 $1 \to 4 \to 3$ 过程的熵变可以表示为
+    $$
+        \begin{aligned}
+            S_3 - S_1
+             & = (S_4 - S_1) + (S_3-S_4)                                                                          \\
+             & = 0 + \int_{T_4}^{T_3} \frac{\mathrm{d}Q}{T}                                                       \\
+             & = C_{p,\mathrm{m}}\int_{T_4}^{T_3} \frac{\mathrm{d}T}{T}                                           \\
+             & = \frac{7R}{2}\int_{\left(\frac{1}{2}\right)^{\frac{2}{7}} \times 300}^{300} \frac{\mathrm{d}T}{T} \\
+             & = \frac{7R}{2} \cdot \ln\left(\frac{1}{2}\right)^{-\frac{2}{7}}                                    \\
+             & = R \ln2
+        \end{aligned}
+    $$
+
+\end{solution}
+
+\begin{question}{题目5.3.3}
+    水的比热容是 $4.18 \,\si{kJ \cdot kg^{-1} \cdot K^{-1}}$
+    \begin{enumerate}
+        \item[(1)] $1 \,\si{kg}$，$0^\circ C$ 的水与一个 $373 \,\si{K}$ 的大热源相接触，当水的温度到达 $373 \,\si{K}$ 时，水的熵改变多少?
+        \item[(2)] 如果先将水与一个 $323 \,\si{K}$ 的大热源接触，然后再让它与一个 $373 \,\si{K}$ 的大热源接触，求整个系统的熵变.
+        \item[(3)] 说明怎样才可使水从 $273 \,\si{K}$ 变到 $373 \,\si{K}$ 而整个系统的熵不变.
+    \end{enumerate}
+\end{question}
+\begin{solution}
+    (1)设水的初始温度为 $T_1$ ， 水的最终温度为 $T_3$ ，水的定压比热容为 $c_p$，那么水的熵变可以表示为
+    $$
+        \Delta{S} = \int_{T_1}^{T_3} \frac{\mathrm{d}Q}{T}
+        = mc_p\int_{T_1}^{T_3} \frac{\mathrm{d}T}{T}
+        = mc_p\ln\frac{T_3}{T_1}
+        = 1304.61 \,\si{J \cdot K^{-1}}
+    $$
+    (2)系统的总熵变应为两次水的熵变和两次热源的熵变之和，可以分别表示为
+    $$
+        \Delta{S}_{\text{水}}
+        = mc_p\ln\frac{T_2}{T_1} + mc_p\ln\frac{T_3}{T_2}
+        = mc_p\ln\frac{T_2T_3}{T_1T_2}
+        = 1.30 \times 10^3 \,\si{J \cdot K^{-1}}
+    $$
+    $$
+        \Delta{S}_{\text{热源}}
+        = \frac{Q_2}{T_2} + \frac{Q_3}{T_3}
+        = \frac{-mc_p(T_2-T_1)}{T_2} + \frac{-mc_p(T_3-T_2)}{T_3}
+        = -1207.38 \,\si{J \cdot K^{-1}}
+    $$
+    $$
+        \Delta{S} = \Delta{S}_{\text{水}} + \Delta{S}_{\text{热源}}
+        \approx 97 \,\si{J \cdot K^{-1}}
+    $$
+    (3)我们注意到，中间温度热源的加入可以使得升温过程中系统的总熵变减少，所以只要不断地增加一系列温差无穷小中间热源，使得水的每一次升温的幅度都趋近于无穷小（即水的每一次升温都是可逆过程），最终就可以实现整个系统在升温过程中保持总熵不变.
+\end{solution}
+
+\begin{question}{题目5.3.5}
+    有一热机循环，它在 $T - S$ 图上可表示为其半长轴和半短轴平行于 $T$ 轴和 $S$ 轴的椭圆，循环中熵的变化范围为从 $S_0$ 到 $3S_0$，$T$的变化范围为 $T_0$ 到 $3T_0$，试求该热机的效率.
+\end{question}
+\begin{solution}
+    依题意画出示意图
+    \begin{center}
+        \begin{tikzpicture}
+            %画坐标轴
+            \draw[latex-latex] (0,6.5) -- (0,0) -- (3.5,0);
+            \node[below] at (3.5, 0) {$S$};
+            \node[left ] at (0, 6.5) {$T$};
+            \node[below] at (0,0) {$O$};
+
+            %标注点
+            \node [right] at (3, 4) {$1$};
+            \node [below] at (2, 2) {$2$};
+            \node [left ] at (1, 4) {$3$};
+            \node [above] at (2, 6) {$4$};
+            \node [left ] at (0, 2) {$T_0$};
+            \node [left ] at (0, 6) {$3T_0$};
+            \node [below] at (1, 0) {$S_0$};
+            \node [below] at (3, 0) {$3S_0$};
+
+            %画出虚线
+            \draw [dashed] (3, 4) -- (3, 0); %1的垂线
+            \draw [dashed] (2, 2) -- (0, 2); %2的垂线
+            \draw [dashed] (1, 4) -- (1, 0); %3的垂线
+            \draw [dashed] (2, 6) -- (0, 6); %4的垂线
+
+            %画出椭圆
+            \draw [cyan] (2,4) ellipse (1 and 2);
+        \end{tikzpicture}
+    \end{center}
+    在 $T - S$ 图上顺时针循环所围成的面积就是热机对外所做的功 $W$ （椭圆的面积为 $S = \pi a b$）
+    $$
+        W = \pi T_0 S_0
+    $$
+    路径 $3 \to 4 \to 1$ 是熵增加的过程，它所吸收的热量 $Q$ 可以表示为曲线$3 \to 4 \to 1$ 所围的面积
+    $$
+        Q = \frac{\pi T_0 S_0}{2} + 2T_0 \cdot 2S_0
+        = \left(\frac{\pi}{2} + 4\right) T_0 S_0
+    $$
+    所以热机的效率 $\eta$ 可以表示为
+    $$
+        \eta = \frac{W}{Q}
+        = \frac{\pi T_0S_0}{\left(\frac{\pi}{2} + 4\right)T_0S_0}
+        = \frac{2\pi}{\pi+8}
+    $$
+\end{solution}
+
+\begin{question}{题目5.3.6}
+    理想气体经历一正向可逆循环，其循环过程在 $T-S$ 图上表示为从 $300 \,\si{K}$，$1 \times 10^6 \,\si{J \cdot K^{-1}}$ 的状态等温地变为 $300 \,\si{K}$，$5 \times 10^5 \,\si{J \cdot K^{-1}}$ 的状态，然后等熵地变为 $400 \,\si{K}$，$5 \times 10^5 \,\si{J \cdot K^{-1}}$ 的状态，最后按一条直线变回到 $300 \,\si{K}$，$1 \times 10^6 \,\si{J \cdot K^{-1}}$ 的状态.试求循环效率及它对外所做的功.
+    \begin{center}
+        \begin{tikzpicture}[scale = 0.8]
+            %画坐标轴和原点
+            \draw[latex-latex] (3, 5) -- (3, 0) -- (11, 0);
+            \node[left ] at (3, 5) {$T / (\mathrm{K})$};
+            \node[below right] at (11,0) {$S / \mathrm{(kJ \cdot K^{-1})}$};
+            \node[below] at (3, 0) {$O$};
+
+            %画虚线
+            \draw[dashed] (3, 3) -- (5,3) -- (5,0);
+            \draw[dashed] (3, 4) -- (5, 4);
+            \draw[dashed] (10, 3) -- (10,0);
+
+            %画循环箭头
+            \draw[cyan] (5, 3) -- (5, 4) -- (10, 3) --cycle;
+            \draw[-latex, cyan] (10,3) -- (7.5, 3.0); % 1 -> 2
+            \draw[-latex, cyan] (5, 3) -- (5.0, 3.5); % 2 -> 3
+            \draw[-latex, cyan] (5, 4) -- (7.5, 3.5); % 3 -> 1
+
+            %标注7个参考点
+            \node[left ] at (3, 4) {$400$};
+            \node[left ] at (3, 3) {$300$};
+            \node[below] at (5, 0) {$500$};
+            \node[below] at (10,0) {$1000$};
+            \node[below right] at (10,3) {$1$};
+            \node[below left] at (5, 3) {$2$};
+            \node[above left] at (5, 4) {$3$};
+        \end{tikzpicture}
+    \end{center}
+\end{question}
+\begin{solution}
+    路径 $1 \to 2$ 是等温过程，熵是减小的，释放的热量为
+    $$
+        Q_\text{放} = T_1(S_1-S_2)
+    $$
+    路径 $2 \to 3$ 是等熵过程，是绝热的，所以
+    $$
+        Q = 0
+    $$
+    路径 $3 \to 1$ 过程熵增，它吸收的热量是曲线下的面积
+    $$
+        Q_\text{吸}
+        = \int_{S_1}^{S_2} T \,\mathrm{d}S
+        = 1.75 \times 10^8 \,\si{J}
+    $$
+    而系统在整个循环过程中对外做功为图中三角形所围的面积，即
+    $$
+        W = 2.5 \times 10^7 \,\si{J}
+    $$
+    所以循环的效率 $\eta$ 为
+    $$
+        \eta = \frac{W}{Q_\text{吸}}
+        = \frac{2.5 \times 10^7}{1.75 \times 10^8}
+        = \frac{1}{7}
+    $$
+\end{solution}
+
+\begin{question}{题目5.3.8}
+    在一绝热容器中，质量为 $m$ 、温度为 $T_1$ 的液体和相同质量但温度为 $T_2$ 的同种液体在一定压强下混合后达到新的平衡态，求系统从初态变到终态熵的变化，并说明熵是增加的，设已知液体定压比热容为常量 $c_p$. （注意:液体的体膨胀系数是非常小的.）
+\end{question}
+\begin{solution}
+    由于容器绝热，所以混合前后液体的总内能保持不变. 我们不妨设混合后的平衡温度为$T$，则
+    $$
+        mc_pT_1 + mc_pT_2 = 2mc_pT
+    $$
+    解得
+    $$
+        T = \frac{T_1 + T_2}{2}
+    $$
+    混合前后两份液体的熵变分别为
+    $$
+        \Delta{S_1} = \int_{T_1}^{T} \frac{\mathrm{d}Q}{T}
+        = mc_p\int_{T_1}^{T} \frac{\mathrm{d}T}{T}
+        = mc_p\ln\frac{T}{T_1},
+    $$
+    $$
+        \Delta{S_2} = \int_{T_2}^{T} \frac{\mathrm{d}Q}{T}
+        = mc_p\int_{T_2}^{T} \frac{\mathrm{d}T}{T}
+        = mc_p\ln\frac{T}{T_2},
+    $$
+    系统总熵变为二者之和
+    $$
+        \Delta{S} = \Delta{S_1} + \Delta{S_2}
+        = mc_p\ln\frac{T^2}{T_1T_2}
+        = mc_p\ln\left[\frac{(T_1 + T_2)^2}{4T_1T_4}\right]
+    $$
+    考虑到对于互不相等的 $T_1>0$ 和 $T_2>0$ ，有不等式
+    $$
+        (T_1+T_2)^2 > 4T_1T_2
+        \implies
+        \frac{(T_1+T_2)^2}{4T_1T_2} > 1
+    $$
+    恒成立，所以 $\Delta{S} > 0$ 成立，即总熵是增加的.
+\end{solution}
+
+\begin{question}{题目5.3.9}
+    某热力学系统从状态 $1$ 变化到状态 $2$ . 已经知道状态 $2$ 的热力学概率是状态$1$ 的热力学概率的 $2$ 倍，试确定系统熵的增量.
+\end{question}
+\begin{solution}
+    考虑到玻尔兹曼关系 $S = k \ln{W}$，设 $W_2 = 2W_1$ 所以熵增为
+    $$
+        \Delta{S} = k\ln{W_2} - k\ln{W_1} = k\ln{2} =9.57 \times 10 ^{-24} \,\si{J \cdot K^{-1}}
+    $$
+\end{solution}
