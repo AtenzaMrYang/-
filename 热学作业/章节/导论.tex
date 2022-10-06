@@ -1,0 +1,262 @@
+\section{导论}
+
+\begin{question}{题目1.3.2}
+    定体气体温度计的测温泡浸在水的三相点槽内时，其中气体的压强为$6.7\times10^3\,\si{Pa}$.
+    \begin{enumerate}
+        \item[(1)] 用温度计测量 $300\,\si{K}$ 的温度时，气体的压强是多少？
+        \item[(2)] 当气体的压强为 $9.1\times 10^3\,\si{Pa}$ 时，待测温度是多少？
+    \end{enumerate}
+\end{question}
+
+\begin{solution}
+    (1) 温度计在初始状态下的内部压强为 $p_1$ ，温度为 $T_1 = 273.15 \si{K}$，根据物态方程 $pV = \nu RT$ 有
+    $$
+        p_1 = \frac{\nu RT_1}{V} = 6.7 \times 10^3 \,\si{Pa}
+    $$
+    当温度计在测量 $T_2 = 300\,\si{K}$ 时，内部压强变为
+    $$
+        p_2 = \frac{\nu RT_2}{V}
+        = \frac{p_1}{T_1}T_2
+        \approx 7.4 \times 10^3 \,\si{Pa}
+    $$
+    (2) 温度计在初始状态下的内部压强为 $p_1$ ，温度为 $T_1 = 273.15 \si{K}$ ，根据物态方程 $pV = \nu RT$ 有
+    $$
+        T_1 = \frac{p_1V}{\nu R}
+    $$
+    当气压为 $p_3 = 9.1 \times 10^3 \,\si{Pa}$ 时，待测温度为
+    $$
+        T_3 = \frac{p_3V}{\nu R}
+        = \frac{T_1}{p_1}p_3
+        \approx 371 \si{K}
+    $$
+\end{solution}
+
+\begin{question}{题目1.3.5}
+    国际实用温标（1990年）规定：用于 $13.803 \,\si{K}$ （平衡氢三相点）到 $961.78^\circ C$（银在$0.101 \,\si{MPa}$ 下的凝固点）的标准测量仪器是铂电阻温度计. 设铂电阻在 $0^\circ C$ 及 $t$ 时电阻的值分别为 $R_0$ 及 $R(t)$，定义 $W(t) = \dfrac{R(t)}{R_0}$ ，且在不同测温区内 $W(t)$ 对 $t$ 的函数关系是不同的，在上述测温范围内大致有：
+    $$
+        W(t) = 1 + At + Bt^2
+    $$
+    若在 $0.101\,\si{MPa}$ 下，对于冰的熔点、水的沸点、硫的沸点（温度为 $444.67^\circ C$ ），电阻的阻值分别为 $11.000\Omega$， $15.247\Omega$ 和 $28.887\Omega$ ，试确定上式中的常量 $A$ 和 $B$ .
+\end{question}
+\begin{solution}
+    对于冰的熔点 $t = 0^\circ C$ ，有
+    $$
+        W(t) = \frac{R(t = 0)}{R_0} = \frac{R_0}{R_0} = 1
+    $$
+    对于水的沸点 $t = 100^\circ C$ ，有
+    $$
+        W(t) = \frac{R(t = 100)}{R_0} = 1+(100)A+(100)^2B = \frac{15.247}{11.000}
+    $$
+    对于硫的沸点 $t = 444.67^\circ C$ ，有
+    $$
+        W(t) = \frac{R(t = 444.67)}{R_0} = 1+(444.67)A+(444.67)^2B = \frac{28.887}{11.000}
+    $$
+    联立后两个方程，解得： $A = 3.920 \times 10^{-3} \,\si{(^\circ C)^{-1}}$; $B = -5.920 \times 10^{-7} \,\si{(^\circ C)^{-2}}$ .
+\end{solution}
+
+\begin{question}{题目1.4.4}
+    一个带塞的烧瓶， 体积为 $2.0 \times 10^{-3}\,\si{m^3}$ ， 内盛 $0.1\,\si{MPa}$、$\,\si{300K}$ 的氧气. 系统加热到 $\,\si{400 K}$ 时塞子被顶开，立即塞好塞子并停止加热， 烧瓶又逐渐降温到$\si{300K}$. 设外界气压始终为$0.1\,\si{MPa}$. 试问：
+    \begin{itemize}
+        \item[(1)] 瓶中所剩氧气压强是多少?
+        \item[(2)] 瓶中所剩氧气质量是多少?
+    \end{itemize}
+\end{question}
+\begin{solution}
+    (1) 初始状态下氧气的各项参量为：$p_1= 0.1 \,\si{MPa}$， $V = 2.0 \times 10^{-3} \,\si{m^3}$，$T_1 = 300 \,\si{K}$. 根据物态方程 $pV = \nu RT$， 瓶内的氧气 $\nu_1$
+    $$
+        \nu_1 = \frac{p_1V}{RT_1} = 8.02 \times 10^{-2} \,\si{mol}
+    $$
+    系统加热到 $T_2 = 400 \,\si{K}$ 时塞子被顶开，氧气外逸使烧瓶内气压迅速降低至 $p_2 = 0.1 \,\si{MPa}$，那么瓶内剩余的氧气 $\nu_2$
+    $$
+        \nu_2 = \frac{p_2V}{RT_2}
+        = \frac{p_2}{T_2} \cdot \frac{V}{R}
+        = \frac{p_2}{T_2} \cdot \frac{\nu_1T_1}{p_1}
+        = \frac{3}{4} \nu_1
+    $$
+    当烧瓶逐渐降温到 $T_1 = 300 \,\si{K}$ 后，瓶内气压 $p_3$
+    $$
+        p_3 = \dfrac{\nu_2RT_1}{V}
+        = \dfrac{\frac{3}{4}\nu_1RT_1}{V}
+        = 7.5\times10^4 \,\si{Pa}
+    $$
+    (2) 此时，瓶中所剩氧气质量为
+    $$
+        m = \nu_2 M
+        = \frac{3}{4} \nu_1 M
+        = \frac{3}{4} \frac{p_1V}{RT_1} M
+        \approx 1.92 \,\si{g}
+    $$
+\end{solution}
+
+\begin{question}{题目1.4.6 }
+    一抽气机转速 $\omega = 400 \,\si{r\cdot min^{-1}}$（即转/分），抽气机每分钟能够抽出气体 $20\,\si{L}$.设容器的容积 $V = 2.0\,\si{L}$，问经过多少时间后才能使容器的压强由 $0.101 \,\si{MPa}$ 降为 $133\,\si{Pa}$，设抽气过程中气体温度始终不变.
+\end{question}
+\begin{solution}
+    因为抽气机转速为 $\omega = 400 \,\si{r\cdot min^{-1}}$，抽气速度为 $V = 20 \,\si{L \cdot min^{-1}}$，所以抽气机每转抽出的气体体积为
+    $$
+        \Delta V = \frac{
+            20 \,\si{L \cdot min^{-1}}
+        }{
+            400 \si{r \cdot min^{-1}}
+        }
+        = 0.05 \,\si{L \cdot r^{-1}}
+    $$
+    \paragraph{方法一} 根据玻意耳定律：
+    $$
+        \begin{array}{ccc}
+            \hline
+            \text{抽气次数} & \text{压强递推关系}                & \text{压强表达式}                                                                               \\
+            \hline
+            1           & p_0V = p_1 (V+ \Delta V)     & p_1 = \dfrac{V}{V+\Delta V}p_0                                                             \\
+            2           & p_1V = p_2 (V+ \Delta V)     & p_2 = \dfrac{V}{V+\Delta V}p_1 = \left(\dfrac{V}{V+\Delta V}\right)^2 p_0                  \\
+            \vdots      & \vdots                       & \vdots                                                                                     \\
+            n           & p_{n-1}V = p_n (V+ \Delta V) & p_n = \left(\dfrac{V}{V+\Delta V}\right)p_{n-1} = \left(\dfrac{V}{V+\Delta V}\right)^n p_0 \\
+            \hline
+        \end{array}
+    $$
+    最终压强降低为 $p_n = 133 \,\si{Pa}$ 时， 解出抽气次数 $n$
+    $$
+        n = \frac{
+            \ln \left(\dfrac{p_n}{p_0}\right)
+        }{
+            \ln \left(\dfrac{V}{V + \Delta V}\right)
+        }
+        = 268.6 \,\si{r}
+    $$
+    耗时
+    $$
+        t = \left(
+        \frac{
+            268.6\,\si{r}
+        }{
+            400\,\si{r \cdot min^{-1}}
+        }
+        \right) \times 60 \,\si{s}
+        = 40 \,\si{s}
+    $$
+
+    \paragraph{方法二} 设抽气机每转抽出的气体占总量的比例为 $a\%$
+    $$
+        a\% = \frac{\Delta V}{V}
+        = \frac{
+            0.05 \,\si{L \cdot r^{-1}}
+        }{
+            2.0 \,\si{L}
+        } \times 100\%
+        = 2.5\% \,\si{r^{-1}}
+    $$
+    而根据物态方程 $pV = \nu RT$ 可知：在 $T$ 和 $V$ 保持不变时，气体总量和压强呈等比例变化，所以我们不妨设抽气机工作 $n$ 转后，容器内气压降为 $p_n = 133 \,\si{Pa}$
+    $$
+        p_1 (1-a\%)^n = p_n
+    $$
+    解得抽气的转数 $n$
+    $$
+        n = \frac{\ln\left(\dfrac{p_n}{p_1}\right)}{\ln(1-a\%)}
+        = 262.97 \,\si{r}
+    $$
+    也即耗时
+    $$
+        t = \left(\frac{262.97 \,\si{r}}{400 \,\si{r \cdot min^{-1}}}\right) \times 60 \,\si{s}
+        = 39.29 \,\si{s}
+    $$
+\end{solution}
+
+\begin{question}{题目1.6.4}
+    一容器内储有氧气，其压强为$p = 0.101\,\si{MPa}$，温度为$t = 27^\circ C$，试求：
+    \begin{itemize}
+        \item[(1)] 单位体积内的分子数；
+        \item[(2)] 氧气的密度；
+        \item[(3)] 分子间的平均距离；
+        \item[(4)] 分子的平均平动动能.
+    \end{itemize}
+\end{question}
+\begin{solution}
+    (1) 本题会提供两种解法：
+    \paragraph{方法一} \quad 根据物态方程 $pV = \nu RT$，可以得到单位体积内气体的分子数
+    $$
+        n_0 = \frac{\nu}{V}N_A = \frac{p}{RT}N_A = 2.44 \times 10^{25} \,\si{m^{-3}}
+    $$
+    \paragraph{方法二} 利用理想气体的压强公式 $p=nkT$，得到单位体积内气体的分子数为
+    $$
+        n_0 = \frac{p}{kT} = 2.44 \times 10^{25}\,\si{m^{-3}}
+    $$
+    (2) 本题会提供两种解法：
+    \paragraph{方法一} \quad 设氧气的总质量为 $m$，物质的量为 $\nu$，总体积为 $V$，摩尔质量为 $M$，根据物态方程 $pV = \nu RT$，得到氧气的密度
+    $$
+        \rho = \frac{m}{V}
+        = \frac{\nu M}{V}
+        = \frac{p}{RT}M
+        = 1.30 \,\si{kg/m^3}
+    $$
+    \paragraph{方法二} 设每个氧气分子的质量为 $m$，氧气的摩尔质量为 $M = 0.032 \,\si{kg \cdot mol^{-1}}$，根据
+    $$
+        M = mN_A
+    $$
+    解得单个氧气分子的质量为 $m = 5.31 \times 10^{-26} \,\si{kg}$，最终求得氧气的密度
+    $$
+        \rho = n_0 M = 1.30 \,\si{kg/m^3}
+    $$
+    (3) 把每个氧气分子所占的空间简化为边长为 $L$ 的立方体，氧气分子位于立方体的中央，于是可以解得分子间的平均距离
+    $$
+        \overline{L} = \sqrt[3]{\frac{1}{n_0}} = 3.44 \times 10^{-9} \,\si{m}
+    $$
+    (4) 分子的平均平动动能
+    $$
+        \overline{\varepsilon_t} = \frac{1}{2}m\overline{v^2} = \frac{3}{2}kT = 6.22\times10^{-21} \,\si{J}
+    $$
+\end{solution}
+
+\begin{question}{题目1.7.1}把氧气当作范德瓦尔斯气体，它的$a = 1.36\times10^{-1}\,\si{m^6 \cdot Pa \cdot mol^{-2}}$，$b = 32\times10^{-6}\,\si{m^3 \cdot mol^{-1}}$.求密度为$100\,\si{kg \cdot m^{-3}}$，压强为 $10.1\,\si{MPa}$ 时氧的温度，并把结果与氧当作理想气体时的结果作比较.
+\end{question}
+\begin{solution}
+    如果把氧气当作范德瓦尔斯气体，则满足范德瓦尔斯方程
+    $$
+        \left(p+\frac{a}{V_\mathrm{m}^2}\right)\left(V_\mathrm{m}-b\right) = RT
+    $$
+    其中$V_\mathrm{m} = \dfrac{M}{\rho} = 3.2\times10^{-4} \,\si{m^3}$，带入上述方程，解出
+    $$
+        T
+        = \frac{\left(p+\frac{a}{V_\mathrm{m}^2}\right)\left(V_\mathrm{m}-b\right)}{R}
+        =395.85 \,\si{K}
+    $$
+    如果把氧气作为理想气体，则满足方程
+    $$
+        pV = nRT
+    $$
+    解得：
+    $$
+        T = \frac{pV_\mathrm{m}}{R} = 388.72 \,\si{K}
+    $$
+\end{solution}
+\begin{question}{题目1.7.2}
+    把标准状况下 $22.4 \,\si{L}$ 的氮气不断压缩，它的体积将趋近于多大？计算氮分子直径. 此时分子产生的内压强约为多大？已知氮气的范德瓦尔斯方程中的常量$a=1.390 \times 10^{-1} \,\si{m^6 \cdot Pa \cdot mol^{-2}}$，$b=39.31 \times 10^{-6}\,\si{m^3 \cdot mol^{-1}}$.
+\end{question}
+\begin{solution}
+    (1)考虑到 $1 \,\si{mol}$ 气体的范德瓦尔斯方程
+    $$
+        \left(p+\frac{a}{V_\mathrm{m}^2}\right)\left(V_\mathrm{m}-b\right)=RT
+    $$
+    当气体被不断压缩时，压强 $p$ 趋于无穷大
+    $$
+        V_\mathrm{m} = \lim\limits_{p \to \infty} \frac{RT}{\left(p+\frac{a}{V_\mathrm{m}^2}\right)} + b = b
+    $$
+    因此，把标况下 $22.4 \,\si{L}$ 的氮气不断压缩，其体积将趋于
+    $$
+        V = 1 \,\si{mol} \cdot b = 39.31 \times 10^{-6} \,\si{L}
+    $$
+    (2)理论和大量实验指出， $b$ 等于 $1\,\si{mol}$ 分子固有体积的 $4$ 倍，我们不妨设氮分子的直径为 $d$
+    $$
+        V_\mathrm{m} = 4 N_A \cdot \frac{4}{3}\pi\left(\frac{d}{2}\right)^3
+    $$
+    解得
+    $$
+        d = \sqrt[3]{\frac{3V_\mathrm{m}}{2 \pi N_A}} = \sqrt[3]{\frac{3b}{2 \pi N_A}} = 3.16 \times 10 ^{-10} \,\si{m}
+    $$
+    (3)对于 $1 \,\si{mol}$ 气体，分子内压强 $\Delta p_\mathrm{i}$ 可以表示为
+    $$
+        \Delta p_\mathrm{i}
+        = \frac{a}{V_\mathrm{m}^2}
+        = \frac{a}{b^2}
+        = 9.0 \times 10^{7} \,\si{Pa}
+    $$
+\end{solution}
