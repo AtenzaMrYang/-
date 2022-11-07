@@ -1,55 +1,60 @@
-\documentclass{ctexart}
+\documentclass{ctexart}                             % 文档类型为article
 
-% 引入geometry宏包，定义文字的版面和缩放
-\usepackage{geometry}                      
-\geometry{a4paper, scale = 0.80}
-
-% 引入超链接宏包，实现点击目录跳转
-\usepackage{hyperref}
-
-% 引入常用的数学宏包
-\usepackage{amsmath, amssymb, amsthm, mathtools}
-
-% 引入tikz宏包，方便后续绘图
-\usepackage{tikz}
-
-% 引入国际单位制宏包，能更方便地表达物理单位
-\usepackage{siunitx}                        
-
-% 颜色宏包，方便自定义填充色
-\usepackage{xcolor}
-\definecolor{lightblue}{RGB}{226, 247, 254}
-\definecolor{SierraBlue}{RGB}{192 ,207, 222}
-
-% 引入注释宏包是方便后续隐藏解答，只编译题目
-\usepackage{comment}
-
-% 定义 [题目] 的样式为tcolorbox，只需调整参数
-\usepackage{tcolorbox}
-\tcbuselibrary{breakable, most, skins, theorems}
-\newtcolorbox{question}[2][breakable] {
-    colback = lightblue,        %定义 边框内的填充色为lightblue，默认是灰色
-    colframe = cyan,            %定义 边框自身的颜色是较深的cyan蓝
-    fonttitle = \bfseries,      %定义 边框上的题目编号加粗
-    title = #2, #1              %定义 边框内的题目编号依次从 参数#2 #1 处传入
+\usepackage{geometry}                               % 引入geometry宏包
+\geometry{a4paper, scale = 0.80}                    % 定义纸张和版面缩放
+\usepackage{hyperref}                               % 引入hyperref宏包，实现跳转
+\usepackage{amsmath, amssymb, amsthm, mathtools}    % 引入常用的数学宏包
+\usepackage{tikz}                                   % 引入tikz宏包，用于绘图
+\usepackage{siunitx}                                % 引入国际单位制宏包
+\usepackage{xcolor}                                 % 引入用于定义颜色的宏包
+\definecolor{LightBlue}{RGB}{226, 247, 254}         % 定义颜色 LightBlue
+\definecolor{SierraBlue}{RGB}{192 ,207, 222}        % 定义颜色 SierraBlue
+\usepackage{comment}                                % 引入注释宏包
+\usepackage{tcolorbox}                              % 引入tcolorbox宏包
+\tcbuselibrary{breakable, most, skins, theorems}    % 调用 tcolorbox 的相关功能
+\newtcolorbox{question}[2][breakable] {             % 定义 [题目] 的样式
+    colback = LightBlue,                            % 定义 填充色为LightBlue
+    colframe = cyan,                                % 定义 边框颜色是cyan青色
+    fonttitle = \bfseries,                          % 定义 题目编号的字体
+    title = #2, #1                                  % 定义 题目编号依次从参数#2 #1传入
 }
-
-% 手动用新环境定义一套 [解答] 样式
 \newenvironment{solution} {
-    \noindent{\textbf{{\color{cyan}解答}}}\quad
+    \noindent{\textbf{{\color{cyan}解答}}}\quad     % 手动用新环境定义一套 [解答] 样式
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 如何输入不同层级的标题？
+% \section{一级标题}
+% \subsection{二级标题}
+% \subsubsection{三级标题}
+% 
+% 
+% 如何编辑 [题目] ？
+% 具体的样式定义在文件头部: \newtcolorbox{question}
+% \begin{question}{题目编号(必填)}
+%     这里输入详细的题目
+% \end{question}
+% 
+% 
+% 如何编辑 [解答] ？
+% 具体的样式定义在文件头部: \newenvironment{solution}
+% \begin{solution}
+%     这里输入详细的解答过程
+% \end{solution}
+% 
+% 
+% 如何表示物理单位？
+% 需要在文件头部引入siunitx宏包
+% \,\si{这里填写单位}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\excludecomment{solution} %编译这条指令就会隐藏所有解答，生成习题册
+
+% \excludecomment{solution} % 编译这条指令会隐藏所有解答，生成习题册
 
 \begin{document}
 
 \title{《热学》部分课后习题解答}
-
 \author{郭文锑}
-
-\date{\today}
-
 \maketitle
 
 \tableofcontents
